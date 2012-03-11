@@ -1,9 +1,31 @@
-MANUALLY SECURE SERVER
+Assuming you have a secured server you can provision your server with an entire
+Rails stack in just a few commands using this recipie for Sprinkle.
 
-Login to server using root and password
+This stack includes Zsh, MySQL, Nginx/Passenger, Git and Ruby 1.9.2
+
+Note: You should secure your server *before* provisioning it.
+
+AUTOMATIC INSTALL OF RAILS STACK 
+================================
+
+On your development machine:
+
+```
+git clone git://github.com/krisleech/rails-stack.git
+cd rails-stack
+bundle install
+cp config/deploy.example.rb config/deploy.rb
+vim deploy.rb
+sprinkle -c -s config/install.rb
+```
+
+MANUALLY SECURE SERVER
+======================
+
 Create user and add to sudo group
 
 ```shell
+ssh user@example.com
 adduser deploy
 usermod -a -G sudo deploy
 ```
@@ -25,10 +47,10 @@ Prevent password and root logins:
 vim /etc/ssh/sshd_config
 ```
 
-  ```
+```
   PermitRootLogin no 
   PasswordAuthentication no
-  ```
+```
 
 ```
 sudo service ssh restart
@@ -37,18 +59,3 @@ sudo service ssh restart
 ```
 sudo apt-get install denyhosts 
 ```
-
-AUTOMATIC INSTALL OF RAILS STACK (mySQL, Nginx/Passenger, Git, Ruby 1.9.2)
-
-On your development machine:
-
-```
-gem install bundler
-bundle install
-cp config/deploy.example.rb config/deploy.rb
-vim deploy.rb
-sprinkle -c -s config/install.rb
-```
-
-
-
