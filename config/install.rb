@@ -1,11 +1,12 @@
 $:<< File.join(File.dirname(__FILE__), 'stack')
 
-%w(essential git ruby nginx mysql rails zsh).each do |lib|
+%w(essential locale git ruby nginx mysql rails zsh).each do |lib|
   require lib
 end
 
 policy :stack, :roles => :app do
   requires :build_essential
+  requires :locale
   requires :git
   requires :mysql
   requires :nginx
