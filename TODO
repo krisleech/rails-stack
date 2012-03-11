@@ -1,0 +1,10 @@
+TODO
+
+zsh
+passenger
+nginx conf files to show a welcome page
+tmux
+vim
+solr/java (in git fork)
+sudo hostname your-hostname
+Add 127.0.0.1 your-hostname to /etc/hosts
