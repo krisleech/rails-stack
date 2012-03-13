@@ -25,16 +25,16 @@ MANUALLY SECURE SERVER
 Create user and add to sudo group
 
 ```shell
-ssh user@example.com
-adduser deploy
-usermod -a -G sudo deploy
+ssh root@example.com
+sudo adduser deploy
+sudo usermod -a -G sudo deploy
 ```
 
 upload ssh key to new user
 
 ```
-scp ~/.ssh/identify.pub example.com:.
-ssh example.com
+scp ~/.ssh/identify.pub deploy@example.com:.
+ssh deploy@example.com
 mkdir ~/.ssh
 mv identity.pub ~/.ssh/authorized_keys
 chmod 700 ~/.ssh
