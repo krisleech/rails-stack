@@ -10,7 +10,7 @@ AUTOMATIC INSTALL OF RAILS STACK
 
 On your development machine:
 
-```
+```shell
 git clone git://github.com/krisleech/rails-stack.git
 cd rails-stack
 bundle install
@@ -22,7 +22,7 @@ sprinkle -c -s config/install.rb
 MANUALLY SECURE SERVER
 ======================
 
-```
+```shell
 ssh root@example.com
 
 # change your root pasword
@@ -35,18 +35,21 @@ sudo usermod -a -G sudo deploy
 exit
 ```
 
-```
+```shell
 # upload your ssh key for passwordless login
-scp ~/.ssh/identify.pub deploy@example.com:.
+scp ~/.ssh/identity.pub deploy@example.com:.
+
 ssh deploy@example.com
+
 mkdir ~/.ssh
 mv identity.pub ~/.ssh/authorized_keys
 chmod 700 ~/.ssh
 chmod 600 ~/.ssh/authorized_keys
+
 exit
 ```
 
-```
+```shell
 # disable root and password login
 ssh deploy@example.com
 sudo vim /etc/ssh/sshd_config
