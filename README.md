@@ -22,7 +22,7 @@ sprinkle -c -s config/install.rb
 MANUALLY SECURE SERVER
 ======================
 
-```shell
+```
 ssh root@example.com
 
 # change your root pasword
@@ -36,7 +36,7 @@ exit
 ```
 
 ```
-# upload your ssh key 
+# upload your ssh key for passwordless login
 scp ~/.ssh/identify.pub deploy@example.com:.
 ssh deploy@example.com
 mkdir ~/.ssh
@@ -50,8 +50,8 @@ exit
 # disable root and password login
 ssh deploy@example.com
 sudo vim /etc/ssh/sshd_config
-  # PermitRootLogin no 
-  # PasswordAuthentication no
+  PermitRootLogin no 
+  PasswordAuthentication no
 sudo service ssh restart
 
 # Install denyhosts
