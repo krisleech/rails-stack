@@ -1,8 +1,9 @@
-$:<< File.join(File.dirname(__FILE__), 'stack')
+require 'bundler'
+Bundler.setup
 
-%w(essential locale git ruby apache passenger postgres rails java).each do |lib|
-  require lib
-end
+require 'require_all'
+
+require_all 'config/stack/*.rb'
 
 policy :stack, :roles => :app do
   requires :build_essential
