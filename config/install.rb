@@ -16,6 +16,7 @@ policy :stack, :roles => :app do
   requires :rails
   requires :editor
   requires :curl
+  requires :wget
   requires :shell
   requires :java
 end
@@ -28,7 +29,7 @@ deployment do
       recipes 'deploy'
     end
   end
- 
+
   source do
     prefix   '/usr/local'
     archives '/usr/local/sources'
