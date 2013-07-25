@@ -1,5 +1,5 @@
 package :locale do
-  pre :install, '/usr/sbin/locale-gen en_GB.UTF-8'
+  pre :install, 'locale-gen en_GB.UTF-8'
   pre :install, '/usr/sbin/update-locale LANG=en_GB.UTF-8'
 
   apt :ntp
