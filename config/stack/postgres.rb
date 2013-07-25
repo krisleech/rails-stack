@@ -1,8 +1,10 @@
-package :postgres do
+package :postgres, :provides => :database do
   description 'PostgreSQL database'
+
   apt %w( postgresql postgresql-client libpq-dev )
 
   verify do
-    has_executable 'psql'
+    has_apt 'postgresql'
+    has_process 'postgres'
   end
 end

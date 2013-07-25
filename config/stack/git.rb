@@ -4,6 +4,6 @@ package :git do
   apt 'git-core'
 
   verify do
-    has_executable 'git'
+    has_apt 'git'
   end
 end

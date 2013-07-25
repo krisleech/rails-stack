@@ -1,8 +1,7 @@
-package :zsh do
+package :zsh, :provides => :shell do
   description 'Zsh with OhMyZsh'
 
   apt 'zsh' do
-    # FIXME: This needs to be run as user, not sudo
     post :install, 'chsh -s /usr/bin/zsh', :sudo => false
   end
 
