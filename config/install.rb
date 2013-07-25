@@ -7,6 +7,7 @@ require_all 'config/stack/*.rb'
 
 policy :stack, :roles => :app do
   requires :build_essential
+  requires :utils
   requires :locale
   requires :git
   requires :database
@@ -15,8 +16,6 @@ policy :stack, :roles => :app do
   requires :ruby
   requires :rails
   requires :editor
-  requires :curl
-  requires :wget
   requires :shell
   requires :java
 end
