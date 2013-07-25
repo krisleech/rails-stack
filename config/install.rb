@@ -6,6 +6,7 @@ require 'require_all'
 require_all 'config/stack/*.rb'
 
 policy :stack, :roles => :app do
+  requires :permissions
   requires :build_essential
   requires :utils
   requires :locale
