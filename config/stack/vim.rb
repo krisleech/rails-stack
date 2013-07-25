@@ -12,5 +12,6 @@ package :vim, :provides => :editor do
   end
 
   requires :ack
-  requires :ag
+  # requires :ag
+  requires :tmux
 end
