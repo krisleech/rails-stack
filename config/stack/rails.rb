@@ -5,7 +5,4 @@ package :rails do
   gem 'bundler' # FIXME: this is not run
 
   requires :build_essential
-
-  verify do
-  end
 end
